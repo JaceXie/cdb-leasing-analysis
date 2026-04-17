@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国银金租 01606 深度分析 — 巴菲特神谕分析师</title>
+<meta name="description" content="融合巴菲特投资哲学与现代多维分析框架的国银金租（HKEX: 01606）深度分析报告">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F2EDE8; --bg-alt: #EBE4DD; --surface: #FFFFFF; --surface-hover: #F9F6F3;
+  --border: #D8CFCA; --border-accent: #C4A882; --text: #4A433E; --text-secondary: #7A726B;
+  --text-dim: #A09890; --heading: #3A3330;
+  --morandi-rose: #C9A9A0; --morandi-sage: #A3B0A0; --morandi-sand: #C4A882;
+  --morandi-blue: #9EB0BC; --morandi-mauve: #B0A0B0; --morandi-clay: #BEA898;
+  --morandi-olive: #A0A890; --morandi-stone: #B0AAA0;
+  --accent: #8B7355; --accent-light: rgba(139,115,85,0.08); --accent-border: rgba(139,115,85,0.2);
+  --green: #7A9E7E; --green-bg: rgba(122,158,126,0.1); --red: #BF7B6E; --red-bg: rgba(191,123,110,0.1);
+  --yellow: #C4A060; --yellow-bg: rgba(196,160,96,0.1); --blue: #7E9BB0; --blue-bg: rgba(126,155,176,0.1);
+  --table-header-bg: #EDE7E1; --table-stripe: rgba(0,0,0,0.02); --table-hover: rgba(139,115,85,0.06);
+  --shadow-sm: 0 1px 3px rgba(74,67,62,0.06); --shadow-md: 0 4px 12px rgba(74,67,62,0.08);
+  --shadow-lg: 0 8px 32px rgba(74,67,62,0.1);
+  --badge-buy-bg: rgba(122,158,126,0.15); --badge-buy-text: #5A7E5E;
+  --badge-sell-bg: rgba(191,123,110,0.15); --badge-sell-text: #9E5A4E;
+  --badge-hold-bg: rgba(196,160,96,0.15); --badge-hold-text: #8E7030;
+  --radius: 12px; --radius-sm: 8px; --radius-lg: 16px;
+  --content-width: 900px; --sidebar-width: 260px;
+}
+[data-theme="dark"] {
+  --bg: #262320; --bg-alt: #2E2A27; --surface: #33302D; --surface-hover: #3B3734;
+  --border: #4A4540; --border-accent: #8B7355; --text: #E0D8D0; --text-secondary: #B0A89E;
+  --text-dim: #807870; --heading: #F0E8E0;
+  --accent: #C4A882; --accent-light: rgba(196,168,130,0.1); --accent-border: rgba(196,168,130,0.25);
+  --morandi-rose: #C9A9A0; --morandi-sage: #8EA088; --morandi-sand: #C4A882;
+  --morandi-blue: #8AA0B0; --morandi-mauve: #A090A0;
+  --green: #8EB892; --green-bg: rgba(142,184,146,0.12); --red: #D08878; --red-bg: rgba(208,136,120,0.12);
+  --yellow: #D4B070; --yellow-bg: rgba(212,176,112,0.12); --blue: #8EAEC0; --blue-bg: rgba(142,174,192,0.12);
+  --table-header-bg: #3B3734; --table-stripe: rgba(255,255,255,0.02); --table-hover: rgba(196,168,130,0.08);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2); --shadow-md: 0 4px 12px rgba(0,0,0,0.25);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.3);
+  --badge-buy-bg: rgba(142,184,146,0.18); --badge-buy-text: #8EB892;
+  --badge-sell-bg: rgba(208,136,120,0.18); --badge-sell-text: #D08878;
+  --badge-hold-bg: rgba(212,176,112,0.18); --badge-hold-text: #D4B070;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .4s,color .3s}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .4s,border-color .3s}
+[data-theme="light"] .topbar{background:rgba(255,255,255,.9)}
+[data-theme="dark"] .topbar{background:rgba(51,48,45,.9)}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+.topbar-brand{display:flex;align-items:center;gap:10px;font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;color:var(--heading);text-decoration:none}
+.topbar-brand .logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--morandi-sand),var(--morandi-rose));display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.topbar-actions{display:flex;align-items:center;gap:8px}
+.topbar-meta{font-size:.75rem;color:var(--text-dim);margin-right:12px}
+.theme-toggle{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .25s}
+.theme-toggle:hover{background:var(--surface-hover);border-color:var(--accent);color:var(--accent)}
+.layout{max-width:1200px;margin:0 auto;padding:72px 2rem 4rem;display:flex;gap:2.5rem}
+.sidebar{width:var(--sidebar-width);flex-shrink:0;position:sticky;top:72px;height:calc(100vh - 88px);overflow-y:auto;padding:1rem 0}
+.sidebar::-webkit-scrollbar{width:3px}.sidebar::-webkit-scrollbar-track{background:transparent}.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.sidebar-nav{list-style:none}.sidebar-nav li{margin-bottom:2px}
+.sidebar-nav a{display:block;padding:6px 12px;font-size:.8rem;color:var(--text-secondary);text-decoration:none;border-radius:var(--radius-sm);border-left:2px solid transparent;transition:all .2s;line-height:1.5}
+.sidebar-nav a:hover{color:var(--accent);background:var(--accent-light)}
+.sidebar-nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-light);font-weight:500}
+.sidebar-nav .nav-group{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);padding:16px 12px 6px}
+.content{flex:1;min-width:0;max-width:var(--content-width)}
+.hero{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;margin-bottom:2rem;box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--morandi-sand),var(--morandi-rose),var(--morandi-sage),var(--morandi-blue))}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);background:var(--accent-light);border:1px solid var(--accent-border);border-radius:999px;padding:4px 14px;margin-bottom:1.25rem}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:var(--heading);line-height:1.3;margin-bottom:.5rem}
+.hero-subtitle{font-size:1rem;color:var(--text-secondary);margin-bottom:1.5rem}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.hero-stat{text-align:center}
+.hero-stat .label{font-size:.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.hero-stat .value{font-family:'JetBrains Mono',monospace;font-size:1.15rem;font-weight:600;color:var(--heading)}
+.hero-stat .change{font-size:.72rem;margin-top:2px}
+.change.up{color:var(--green)}.change.down{color:var(--red)}
+.verdict{background:linear-gradient(135deg,var(--surface),var(--bg-alt));border:1px solid var(--border-accent);border-radius:var(--radius-lg);padding:2rem;margin-bottom:2rem;box-shadow:var(--shadow-md);position:relative}
+.verdict::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--morandi-sand);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.verdict-title{font-family:'Noto Serif SC',serif;font-size:1.15rem;font-weight:600;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.verdict p{font-size:.92rem;line-height:1.8;color:var(--text)}.verdict strong{color:var(--heading)}
+.decision-summary{background:var(--surface);border:2px solid var(--morandi-sage);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin-bottom:2rem;box-shadow:var(--shadow-md);display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.25rem;align-items:center}
+.ds-item{text-align:center}
+.ds-item .ds-label{font-size:.68rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.ds-item .ds-value{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--heading)}
+.ds-item .ds-note{font-size:.7rem;color:var(--text-secondary);margin-top:2px}
+.ds-item .ds-value.rating-buy{color:var(--green)}.ds-item .ds-value.rating-hold{color:var(--yellow)}
+.module{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);transition:box-shadow .3s}
+.module:hover{box-shadow:var(--shadow-md)}
+.module-header{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.module-num{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;font-family:'JetBrains Mono',monospace}
+.module-num.n1{background:rgba(201,169,160,.2);color:var(--morandi-rose)}
+.module-num.n2{background:rgba(163,176,160,.2);color:var(--morandi-sage)}
+.module-num.n3{background:rgba(196,168,130,.2);color:var(--morandi-sand)}
+.module-num.n4{background:rgba(158,176,188,.2);color:var(--morandi-blue)}
+.module-num.n5{background:rgba(176,160,176,.2);color:var(--morandi-mauve)}
+.module-num.n6{background:rgba(190,168,152,.2);color:var(--morandi-clay)}
+.module-num.n7{background:rgba(201,169,160,.2);color:var(--morandi-rose)}
+.module-num.n8{background:rgba(163,176,160,.2);color:var(--morandi-sage)}
+.module-num.n9{background:rgba(196,168,130,.2);color:var(--morandi-sand)}
+.module-num.n10{background:rgba(158,176,188,.2);color:var(--morandi-blue)}
+.module-num.n11{background:rgba(191,123,110,.15);color:var(--red)}
+.module-num.n12{background:rgba(196,168,130,.2);color:var(--morandi-sand)}
+.module h2{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:600;color:var(--heading)}
+.module h3{font-family:'Noto Serif SC',serif;font-size:1rem;font-weight:600;color:var(--heading);margin:1.5rem 0 .75rem}
+.module h3:first-of-type{margin-top:0}
+.module p,.module li{font-size:.88rem;line-height:1.8;color:var(--text)}
+.module ul,.module ol{padding-left:1.5rem;margin:.5rem 0}.module li{margin-bottom:.3rem}
+.module strong{color:var(--heading);font-weight:600}
+.table-wrapper{overflow-x:auto;margin:1rem 0;border-radius:var(--radius-sm);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.82rem;line-height:1.5}
+thead{background:var(--table-header-bg)}
+th{padding:10px 14px;font-weight:600;color:var(--heading);text-align:left;white-space:nowrap;border-bottom:2px solid var(--border);font-size:.78rem}
+td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top}
+tr:nth-child(even){background:var(--table-stripe)}tr:hover{background:var(--table-hover)}
+td:first-child{font-weight:500;color:var(--heading)}
+.num{font-family:'JetBrains Mono',monospace;font-size:.8rem;text-align:right}th.num{text-align:right}
+.callout{padding:1rem 1.25rem;border-radius:var(--radius-sm);margin:1rem 0;font-size:.85rem;line-height:1.7;border-left:3px solid}
+.callout.info{background:var(--blue-bg);border-color:var(--blue)}
+.callout.success{background:var(--green-bg);border-color:var(--green)}
+.callout.warning{background:var(--yellow-bg);border-color:var(--yellow)}
+.callout.danger{background:var(--red-bg);border-color:var(--red)}
+.callout-title{font-weight:600;color:var(--heading);margin-bottom:4px}
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.02em}
+.badge.buy{background:var(--badge-buy-bg);color:var(--badge-buy-text)}
+.badge.sell{background:var(--badge-sell-bg);color:var(--badge-sell-text)}
+.badge.hold{background:var(--badge-hold-bg);color:var(--badge-hold-text)}
+.code-block{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-family:'JetBrains Mono',monospace;font-size:.8rem;line-height:1.7;overflow-x:auto;margin:1rem 0;color:var(--text)}
+.highlight-box{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:var(--radius);padding:1.25rem;margin:1rem 0}
+.highlight-box .hl-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:600;margin-bottom:.5rem}
+.moat-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
+.moat-item:last-child{border-bottom:none}
+.moat-label{flex:1;font-size:.85rem;font-weight:500;color:var(--heading)}
+.moat-rating{font-size:.72rem;font-weight:600;padding:2px 10px;border-radius:999px}
+.moat-rating.wide{background:var(--green-bg);color:var(--green)}
+.moat-rating.narrow{background:var(--yellow-bg);color:var(--yellow)}
+.moat-rating.none{background:var(--red-bg);color:var(--red)}
+.scorecard-grid{display:grid;grid-template-columns:1fr;gap:6px;margin:1rem 0}
+.score-row{display:flex;align-items:center;padding:8px 12px;border-radius:var(--radius-sm);background:var(--bg-alt);gap:12px}
+.score-row .criteria{flex:1;font-size:.82rem;color:var(--text)}
+.score-row .score{font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:600;color:var(--accent);min-width:42px;text-align:center}
+.score-row .dots{display:flex;gap:4px}
+.score-row .dot{width:10px;height:10px;border-radius:50%;background:var(--border)}
+.score-row .dot.filled{background:var(--morandi-sand)}
+.grade-badge{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;font-family:'Noto Serif SC',serif;font-size:1.5rem;font-weight:700}
+.grade-badge.a{background:var(--green-bg);color:var(--green);border:2px solid var(--green)}
+.grade-badge.b{background:var(--blue-bg);color:var(--blue);border:2px solid var(--blue)}
+.grade-badge.c{background:var(--yellow-bg);color:var(--yellow);border:2px solid var(--yellow)}
+.decision-box{background:var(--surface);border:2px solid var(--green);border-radius:var(--radius-lg);padding:2rem;margin:1.5rem 0}
+.decision-header{display:flex;align-items:center;gap:16px;margin-bottom:1.5rem}
+.decision-rating{font-family:'Noto Serif SC',serif;font-size:1.2rem;font-weight:700;padding:8px 20px;border-radius:var(--radius);background:var(--green-bg);color:var(--green)}
+.decision-price{font-family:'JetBrains Mono',monospace}
+.decision-price .current{font-size:1.8rem;font-weight:700;color:var(--heading)}
+.decision-price .target{font-size:.82rem;color:var(--text-secondary)}
+.disclaimer{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-top:2rem;font-size:.78rem;color:var(--text-dim);line-height:1.7}
+.disclaimer strong{color:var(--text-secondary)}
+.page-footer{text-align:center;padding:2rem 0;margin-top:2rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--text-dim)}
+.page-footer a{color:var(--accent);text-decoration:none}.page-footer a:hover{text-decoration:underline}
+.back-to-top{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-md);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;transform:translateY(10px);transition:all .3s;z-index:100}
+.back-to-top.visible{opacity:1;transform:translateY(0)}
+.back-to-top:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media(max-width:960px){.sidebar{display:none}.layout{padding:72px 1.25rem 3rem}.hero,.module{padding:1.5rem}}
+@media(max-width:600px){.layout{padding:64px 1rem 2rem}.hero{padding:1.25rem}.hero-stats{grid-template-columns:repeat(2,1fr)}.module{padding:1.25rem}.topbar-meta{display:none}th,td{padding:7px 10px;font-size:.75rem}.decision-summary{grid-template-columns:repeat(2,1fr)}}
+@media print{.topbar,.sidebar,.theme-toggle,.back-to-top{display:none!important}.layout{padding:0}.module{break-inside:avoid;box-shadow:none;border:1px solid #ddd}}
+</style>
+</head>
+<body>
+
+<nav class="topbar"><div class="topbar-inner">
+  <a href="#" class="topbar-brand"><div class="logo">B</div><span>巴菲特神谕分析师</span></a>
+  <div class="topbar-actions">
+    <span class="topbar-meta">2026-04-17 | HKEX: 01606</span>
+    <button class="theme-toggle" id="themeToggle" title="切换主题" aria-label="Toggle theme"><span id="themeIcon">&#9790;</span></button>
+  </div>
+</div></nav>
+
+<div class="layout">
+
+<aside class="sidebar"><ul class="sidebar-nav" id="sidebarNav">
+  <li class="nav-group">概览</li>
+  <li><a href="#verdict">巴菲特裁决</a></li>
+  <li><a href="#summary">决策摘要</a></li>
+  <li><a href="#overview">公司概览</a></li>
+  <li class="nav-group">基本面</li>
+  <li><a href="#management">管理层评估</a></li>
+  <li><a href="#business">商业模式</a></li>
+  <li><a href="#moat">经济护城河</a></li>
+  <li><a href="#financials">财务分析</a></li>
+  <li><a href="#earningscall">电话会分析</a></li>
+  <li class="nav-group">估值与市场</li>
+  <li><a href="#valuation">多模型估值</a></li>
+  <li><a href="#competition">竞争分析</a></li>
+  <li><a href="#technical">技术面</a></li>
+  <li class="nav-group">风险与决策</li>
+  <li><a href="#catalysts">增长催化剂</a></li>
+  <li><a href="#risk">风险矩阵</a></li>
+  <li><a href="#scorecard">巴菲特计分卡</a></li>
+</ul></aside>
+
+<main class="content">
+
+<!-- Decision Summary -->
+<section class="decision-summary" id="summary">
+  <div class="ds-item"><div class="ds-label">巴菲特计分</div><div class="ds-value">19/36</div><div class="ds-note">C级 &middot; 一般</div></div>
+  <div class="ds-item"><div class="ds-label">投资评级</div><div class="ds-value rating-buy">买入</div><div class="ds-note">深度价值+股息</div></div>
+  <div class="ds-item"><div class="ds-label">12个月目标价</div><div class="ds-value">HK$2.60</div><div class="ds-note">独立估值中位数</div></div>
+  <div class="ds-item"><div class="ds-label">首仓买入价</div><div class="ds-value">HK$2.08</div><div class="ds-note">FV×80%</div></div>
+  <div class="ds-item"><div class="ds-label">股息率</div><div class="ds-value">6.9%</div><div class="ds-note">HK$0.11/股</div></div>
+</section>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-badge">深度分析报告</div>
+  <h1>国银金租 01606 深度分析</h1>
+  <p class="hero-subtitle">国开行旗下金融租赁平台 · 飞机/船舶/绿色能源多引擎 · P/B 0.43x深度折让</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="label">52周区间</div><div class="value">HK$1.35-1.90</div></div>
+    <div class="hero-stat"><div class="label">市值</div><div class="value">~HK$201亿</div></div>
+    <div class="hero-stat"><div class="label">净利润(2025)</div><div class="value">RMB 50.3亿</div><div class="change up">+11.7%</div></div>
+    <div class="hero-stat"><div class="label">ROE</div><div class="value">11.73%</div></div>
+    <div class="hero-stat"><div class="label">P/B</div><div class="value">0.43x</div></div>
+    <div class="hero-stat"><div class="label">评级</div><div class="value" style="color:var(--green)">买入</div></div>
+  </div>
+</section>
+
+<!-- Verdict -->
+<section class="verdict" id="verdict">
+  <div class="verdict-title">巴菲特的裁决</div>
+  <p><strong>"这不是一门好生意，但这是一个好价格。"</strong> 国银金租本质上是一家"加了10倍杠杆的银行"——用3.5%的成本借钱、以4.5%出租飞机船舶，赚1%的利差。ROE 11.7%听起来体面，但全靠高杠杆撑起。巴菲特一生回避这种"肥尾风险"生意——利率一动，利差就塌。</p>
+  <p style="margin-top:.75rem">然而，市场给了它一个<strong>格雷厄姆式的烟蒂价格</strong>：P/B 0.43x、P/E 3.6x、股息率6.9%，意味着即使公司不再增长、甚至资产打对折，买入价也有安全边际。国开行控股64.4%的"隐性政府信用担保"+拨备覆盖率551%+不良率0.56%，让这张"负债表"比大多数中国银行都干净。<strong>这不是巴菲特的"美好生意"，是格雷厄姆的"肥雪茄还能抽三口"</strong>——适合收息党与深度价值玩家，不适合成长股信徒。</p>
+</section>
+
+<!-- Module 1 -->
+<section class="module" id="overview">
+  <div class="module-header"><div class="module-num n1">01</div><h2>公司概览与背景</h2></div>
+  <div class="table-wrapper"><table><tbody>
+    <tr><td>代码 / 交易所</td><td>01606.HK / 香港联交所主板</td></tr>
+    <tr><td>公司全称</td><td>国银金融租赁股份有限公司</td></tr>
+    <tr><td>市值</td><td class="num">~HK$201亿 (~US$26亿)</td></tr>
+    <tr><td>行业</td><td>金融租赁 (飞机/船舶/基础设施/新能源)</td></tr>
+    <tr><td>成立时间</td><td>1984年 (前身深圳金融租赁公司)</td></tr>
+    <tr><td>上市日期</td><td>2016年7月 (HKEX)</td></tr>
+    <tr><td>总部</td><td>深圳</td></tr>
+    <tr><td>总股本</td><td class="num">~126.4亿股</td></tr>
+    <tr><td>52周价格区间</td><td class="num">HK$1.35 — HK$1.90</td></tr>
+    <tr><td>总资产 (2025H1)</td><td class="num">RMB 4,177亿</td></tr>
+  </tbody></table></div>
+
+  <h3>发展历程</h3>
+  <ul>
+    <li><strong>1984年</strong> — 深圳金融租赁有限公司成立，国内最早金融租赁公司之一</li>
+    <li><strong>2008年</strong> — 国家开发银行全资收购，更名"国银金融租赁"</li>
+    <li><strong>2009年</strong> — 成为首家获批开展金融租赁业务的银行系金租公司</li>
+    <li><strong>2016年</strong> — 港交所主板上市（股票代码01606），为内地首家H股金租</li>
+    <li><strong>2020-2023年</strong> — 大规模布局飞机租赁与船舶租赁，跻身全球飞机租赁Top 10</li>
+    <li><strong>2024年</strong> — 机队521架（含211架订单），净利润RMB 45亿，分红率回升</li>
+    <li><strong>2025年</strong> — 净利润50.3亿创历史新高；半年报新能源资产+39.3%，船舶数264艘</li>
+  </ul>
+
+  <h3>股权结构</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>股东</th><th class="num">持股比例</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>国家开发银行</td><td class="num">64.40%</td><td>控股股东，政策性银行背景</td></tr>
+      <tr><td>中信股份 (0267.HK)</td><td class="num">~13.03%</td><td>央企战投，2024-2025曾有退出传闻</td></tr>
+      <tr><td>东方资产管理</td><td class="num">~5%</td><td>四大AMC之一</td></tr>
+      <tr><td>宝武钢铁</td><td class="num">~3%</td><td>战略股东</td></tr>
+      <tr><td>公众H股</td><td class="num">~14%</td><td>港股流通盘相对有限</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warning">
+    <div class="callout-title">股权变更不确定性</div>
+    2024年7月曾因第二大股东中信股份拟将所持股权转出引发市场传言（"央企退金令"相关），公司一度停牌。目前中信仍位列第二大股东，但后续动向需持续关注——若退出，短期有减持压力，中长期可能腾出战略空间。
+  </div>
+</section>
+
+<!-- Module 2 -->
+<section class="module" id="management">
+  <div class="module-header"><div class="module-num n2">02</div><h2>管理层评估</h2></div>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>姓名</th><th>职位</th><th>背景</th></tr></thead>
+    <tbody>
+      <tr><td>卢兴普</td><td>董事长</td><td>国开行系统资深高管，政策性银行管理经验丰富</td></tr>
+      <tr><td>黄敏</td><td>总裁</td><td>主导公司从飞机单引擎向多元化业务转型</td></tr>
+      <tr><td>王学东</td><td>副总裁兼CFO</td><td>负责财务/风控，拨备覆盖率从300%提升至551%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>巴菲特测试：他们是主人翁型经理人吗？</h3>
+  <p>国银金租的管理层是<strong>典型的"中国央企职业经理人"</strong>——能力合格、风控严谨、按部就班，但不是杨元庆/马化腾那种与股东命运绑定的创始人。高管薪酬按央企标准（一般百万级人民币），<strong>持股几乎为零</strong>，不是"主人翁"。</p>
+  <p style="margin-top:.75rem">但另一面，国企背景也带来了<strong>极其保守的资产负债表经营</strong>——不良率0.56%、拨备覆盖551%，在中国所有金租公司中属于第一梯队。他们不会像爱尔兰AerCap那样激进扩张，但也不会爆雷。</p>
+
+  <div class="table-wrapper" style="margin-top:1rem"><table>
+    <thead><tr><th>维度</th><th>评估</th><th class="num">评分</th></tr></thead>
+    <tbody>
+      <tr><td>资本配置能力</td><td>2024年新投放超RMB 1,000亿，重点配置新能源+飞机，方向正确。但整体资产规模增长放缓（总资产-0.9%），反映"量少质高"战略。</td><td class="num">B</td></tr>
+      <tr><td>坦诚程度</td><td>年报/中期报详尽，但中信股权变动披露滞后，市场沟通有改进空间。</td><td class="num">C+</td></tr>
+      <tr><td>利益绑定</td><td>几乎无管理层持股，"政府/央企职业经理人"模式，薪酬激励为主。</td><td class="num">D</td></tr>
+      <tr><td>历史记录</td><td>2016上市至今，净利润连续9年正增长，ROE稳定11-12%。执行纪律超强。</td><td class="num">A-</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- Module 3 -->
+<section class="module" id="business">
+  <div class="module-header"><div class="module-num n3">03</div><h2>商业模式深度解析</h2></div>
+
+  <div class="callout info"><div class="callout-title">巴菲特的"一句话测试"</div>
+    国银金租用国开行的低成本资金(~3-4%)批量采购飞机、船舶、电力设备和基础设施，租给航空公司/船东/地方政府，赚取4-6%的利差。
+  </div>
+
+  <h3>2024年末业务板块分布</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>业务板块</th><th class="num">资产规模</th><th class="num">资产占比</th><th>关键指标</th></tr></thead>
+    <tbody>
+      <tr><td>飞机租赁</td><td class="num">RMB 1,201亿</td><td class="num">29.6%</td><td>521架 (311在运营+210订单) · 85客户/41国家 · 全球Top 9</td></tr>
+      <tr><td>区域发展租赁</td><td class="num">RMB 876亿</td><td class="num">21.6%</td><td>覆盖26省/自治区 · 京津冀+长三角+大湾区占63%</td></tr>
+      <tr><td>船舶租赁</td><td class="num">RMB 647亿</td><td class="num">15.9%</td><td>264艘 (253运营+8在建) · 出租率99.6% · 2024新交付23艘</td></tr>
+      <tr><td>绿色能源+高端装备</td><td class="num">RMB 471亿</td><td class="num">11.6%</td><td>+39.3%资产增速 · 新能源发电11GW(+27%)</td></tr>
+      <tr><td>普惠金融</td><td class="num">RMB 228亿</td><td class="num">5.6%</td><td>2024投放 · 服务4万+小微客户</td></tr>
+      <tr><td>其他（现金+投资）</td><td class="num">RMB 635亿</td><td class="num">15.7%</td><td>流动性储备</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>收入模型的本质：利差生意</h3>
+  <div class="code-block">资金成本: ~3.5% (国开行批发资金 + 绿色金融债)
+租赁收益率: ~5.0-5.5% (飞机/船舶) / ~4.0-4.5% (基础设施)
+━━━━━━━━━━━━━━━━━━━━━━━━
+净利差: ~1.5-2.0% (这就是全部生意)
+
+关键公式:  净利润 ≈ 生息资产 × 净利差 + 其他收入 - 拨备 - 运营成本
+       ≈ RMB 3,500亿 × 1.8% - RMB 20-30亿 拨备 - RMB 20亿 费用 = RMB 50亿</div>
+
+  <div class="callout warning">
+    <div class="callout-title">巴菲特的担忧：杠杆10倍+、利差0.5%的波动 = 净利润30%的波动</div>
+    如果中国十年期国债利率下行导致资产端收益率先于负债端下降，利差可能从1.8%压缩到1.5%——净利润将腰斩。这就是为什么巴菲特说"杠杆让好生意变差，让差生意变烂"。
+  </div>
+</section>
+
+<!-- Module 4 -->
+<section class="module" id="moat">
+  <div class="module-header"><div class="module-num n4">04</div><h2>经济护城河分析</h2></div>
+
+  <div style="margin:1rem 0">
+    <div class="moat-item"><span class="moat-label">1. 网络效应</span><span class="moat-rating none">无</span></div>
+    <div class="moat-item"><span class="moat-label">2. 转换成本 (租约期内客户锁定)</span><span class="moat-rating narrow">窄</span></div>
+    <div class="moat-item"><span class="moat-label">3. 成本优势 (国开行批发资金)</span><span class="moat-rating narrow">窄</span></div>
+    <div class="moat-item"><span class="moat-label">4. 无形资产 (金融租赁牌照+政府信用)</span><span class="moat-rating narrow">窄</span></div>
+    <div class="moat-item"><span class="moat-label">5. 有效规模</span><span class="moat-rating none">无</span></div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hl-label">总体护城河评级：窄护城河</div>
+    <p style="margin-top:.5rem">国银金租的核心优势是<strong>"国开行亲儿子"的资金成本优势</strong>——它能以3.5%借到10年期资金，而民营金租公司要5-6%。这个2%的利差优势就是它的护城河。</p>
+    <p style="margin-top:.5rem">但这条护城河有两个致命弱点：(1) <strong>政策可撤销</strong>——一旦国开行战略调整或央企"退金令"落实，低成本资金可能消失；(2) <strong>招行金租/工银金租等银行系竞对同样享有资金优势</strong>，护城河并非独占。</p>
+  </div>
+
+  <div class="callout warning">
+    <div class="callout-title">关键问题：10年后这条护城河会更宽还是更窄？</div>
+    <strong>更窄的可能性更大</strong>。原因：(1) 中国利率市场化接近完成，银行间资金成本差距在缩小；(2) 外资飞机租赁公司（AerCap、SMBC Aviation）在中国放开后会加剧竞争；(3) 金租行业需求增速放缓（中国"去杠杆"基调），行业Alpha收窄。
+  </div>
+</section>
+
+<!-- Module 5 -->
+<section class="module" id="financials">
+  <div class="module-header"><div class="module-num n5">05</div><h2>财务深度分析</h2></div>
+
+  <h3>核心业绩趋势 (RMB 亿)</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>指标</th><th class="num">2021</th><th class="num">2022</th><th class="num">2023</th><th class="num">2024</th><th class="num">2025</th></tr></thead>
+    <tbody>
+      <tr><td>营业收入</td><td class="num">245.2</td><td class="num">263.5</td><td class="num">266.4</td><td class="num">285.6</td><td class="num">282.8</td></tr>
+      <tr><td>收入增速</td><td class="num">+4%</td><td class="num">+7.5%</td><td class="num">+1.1%</td><td class="num">+7.2%</td><td class="num">-1.0%</td></tr>
+      <tr><td>净利润</td><td class="num">31.0</td><td class="num">33.5</td><td class="num">41.5</td><td class="num">45.0</td><td class="num">50.3</td></tr>
+      <tr><td>净利润增速</td><td class="num">+3%</td><td class="num">+8%</td><td class="num">+23.8%</td><td class="num">+8.5%</td><td class="num">+11.7%</td></tr>
+      <tr><td>ROE平均</td><td class="num">9.8%</td><td class="num">10.2%</td><td class="num">11.3%</td><td class="num">11.6%</td><td class="num">11.7%</td></tr>
+      <tr><td>ROA平均</td><td class="num">0.9%</td><td class="num">0.95%</td><td class="num">1.04%</td><td class="num">1.10%</td><td class="num">1.17%</td></tr>
+      <tr><td>总资产</td><td class="num">3,560</td><td class="num">3,890</td><td class="num">4,095</td><td class="num">4,058</td><td class="num">4,200E</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.82rem;color:var(--text-secondary)">注：2025为最新年报披露数据，总资产E为估算。营业收入2025同比-1%主要因资产结构调整（减少低收益、增加高收益资产），净利润仍创历史新高。</p>
+
+  <h3>资产质量（独立评估）</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>指标</th><th class="num">2023</th><th class="num">2024</th><th class="num">2025H1</th><th>点评</th></tr></thead>
+    <tbody>
+      <tr><td>不良资产率</td><td class="num">0.60%</td><td class="num">0.56%</td><td class="num">0.63%</td><td>持续低于1%，行业第一梯队</td></tr>
+      <tr><td>拨备覆盖率</td><td class="num">400%+</td><td class="num">551.24%</td><td class="num">500%+</td><td>极度保守，"藏利润"空间巨大</td></tr>
+      <tr><td>资本充足率</td><td class="num">~13%</td><td class="num">~13%</td><td class="num">13.10%</td><td>符合监管要求，有富余</td></tr>
+      <tr><td>资产负债率</td><td class="num">~90%</td><td class="num">~90%</td><td class="num">~89%</td><td>杠杆10x+，典型金租</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>杜邦分析：ROE的拆解</h3>
+  <div class="code-block">ROE 11.7% = 净利率 17.8% × 资产周转 0.068x × 权益乘数 ~9.7x
+         = (1.17% ROA) × (9.7x 杠杆)
+
+对比银行业均值:  ROE 10% = ROA 0.9% × 杠杆 11x
+对比AerCap:    ROE 13-18% = ROA 2.5% × 杠杆 5.5x</div>
+  <p style="margin-top:.75rem">国银金租的ROA 1.17%比中国银行业平均（0.9%）好，比AerCap（2.5%）差。<strong>主要差距在飞机租赁资产的定价能力</strong>——AerCap有全球化客户+新老机队组合优势，国银金租仍以国内航司为主。</p>
+
+  <h3>股息政策</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>年度</th><th class="num">每股股息 (RMB)</th><th class="num">分红总额</th><th class="num">分红率</th><th class="num">股息率 @HK$1.59</th></tr></thead>
+    <tbody>
+      <tr><td>2022</td><td class="num">0.0850</td><td class="num">10.7亿</td><td class="num">32%</td><td class="num">5.9%</td></tr>
+      <tr><td>2023</td><td class="num">0.1070</td><td class="num">13.5亿</td><td class="num">33%</td><td class="num">7.4%</td></tr>
+      <tr><td>2024</td><td class="num">0.0891</td><td class="num">11.3亿</td><td class="num">25%</td><td class="num">6.2%</td></tr>
+      <tr><td>2025 (拟)</td><td class="num">0.0995</td><td class="num">12.6亿</td><td class="num">25%</td><td class="num">6.9%</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout info">
+    <div class="callout-title">分红率回落的启示</div>
+    2024年分红率从33%降至25%，公司明确说明"加强利润留存以支持资本补充"——这<strong>既是保守做法（长期正确），也是监管压力（资本充足率）</strong>。2025年维持25%分红率，意味着公司优先保资本、股息率不会大幅提升。
+  </div>
+
+  <h3>现金流质量说明</h3>
+  <p>金融租赁企业的"自由现金流"概念不直接适用——新增业务本身就是资本密集型投放。更合适的指标是：</p>
+  <ul>
+    <li><strong>经营活动现金流</strong>：2024年 ~RMB 500-600亿（主要是租金回收）</li>
+    <li><strong>投资活动现金流</strong>：大幅净流出（新增飞机/船舶/基础设施投放）</li>
+    <li><strong>融资活动现金流</strong>：大幅净流入（发债+同业拆借）</li>
+    <li><strong>净利润现金质量</strong>：净利润与派息基本匹配，会计稳健，无应计利润异常</li>
+  </ul>
+</section>
+
+<!-- Module 6 -->
+<section class="module" id="earningscall">
+  <div class="module-header"><div class="module-num n6">06</div><h2>电话会分析</h2></div>
+
+  <h3>2025年中期业绩电话会（2025-08-29）要点</h3>
+  <ul>
+    <li><strong>管理层定调</strong>：上半年净利润24.01亿创历史新高（+27.6%），ROE 11.73%继续提升，强调"金融服务实体质效跃升"</li>
+    <li><strong>飞机租赁</strong>：在手521架飞机机队保持全球Top 10地位，新订单主要是窄体机（A320neo/737MAX），波音订单稳步交付</li>
+    <li><strong>船舶租赁</strong>：上半年完成全球首单FPSO海工联合融资租赁，是新里程碑；机队264艘，出租率99.6%</li>
+    <li><strong>绿色能源</strong>：新能源装机11GW以上，重点布局光伏/储能，资产增速+39%</li>
+    <li><strong>普惠金融</strong>：上半年投放RMB 100亿+，服务4万余家小微客户，响应"共同富裕"政策导向</li>
+    <li><strong>资产质量</strong>：不良率0.63%，拨备覆盖>500%，继续保持行业第一梯队</li>
+  </ul>
+
+  <h3>2024年业绩电话会（2025-04-04）要点</h3>
+  <ul>
+    <li><strong>卢兴普表态</strong>：2024全年投放超RMB 1,000亿，重点是"新能源+绿色装备"与"大飞机"</li>
+    <li><strong>订单亮点</strong>：2024Q4与波音签署50架737MAX购买协议（引发"拯救波音"关注）</li>
+    <li><strong>股权变更</strong>：回应中信股权转让传闻，强调"不影响经营稳定性"</li>
+    <li><strong>分红态度</strong>：分红率从33%降至25%，明确"加强资本留存"</li>
+  </ul>
+
+  <div class="callout info">
+    <div class="callout-title">管理层措辞分析</div>
+    电话会整体语调<strong>平稳偏保守</strong>，没有激进的增长目标，没有"明年翻倍"式承诺。这是国企风格——说到做到，不吹不黑。相比民营公司，这反而是正面信号（无资本市场迎合动机）。
+  </div>
+</section>
+
+<!-- Module 7 -->
+<section class="module" id="valuation">
+  <div class="module-header"><div class="module-num n7">07</div><h2>多模型估值（8种方法）</h2></div>
+
+  <div class="callout warning">
+    <div class="callout-title">独立估值：不参考现价</div>
+    所有估值完全基于财报数据、业务基本面和行业对标推导。当前股价HK$1.59仅作为"市场报价"，不作为估值锚定。
+  </div>
+
+  <h3>关键输入参数（基于2025年报告数据）</h3>
+  <div class="code-block">EPS FY2025     = RMB 0.398 / 股 = HK$0.437
+BVPS 2025年末E = RMB 3.39 / 股 = HK$3.73 (按ROE 11.7%反推)
+每股股息       = RMB 0.0995 = HK$0.109
+分红率         = 25%
+可持续ROE      = 11-12%
+可持续增长率g  = 4% (中国GDP名义+保守估计)
+股权成本r      = 10% (CAPM: Rf 3% + β×MRP 7%)</div>
+
+  <h3>法1：相对估值 (P/B 同业对标)</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>公司</th><th>ROE</th><th class="num">P/B</th><th class="num">P/E</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>国银金租 01606</td><td>11.7%</td><td class="num">0.43x</td><td class="num">3.6x</td><td>当前估值</td></tr>
+      <tr><td>远东宏信 3360</td><td>9-10%</td><td class="num">0.40-0.50x</td><td class="num">4-5x</td><td>民营金租龙头</td></tr>
+      <tr><td>中银航空 2588</td><td>10-12%</td><td class="num">0.90x</td><td class="num">8-10x</td><td>全球飞机租赁</td></tr>
+      <tr><td>AerCap (AER)</td><td>13-18%</td><td class="num">1.1-1.3x</td><td class="num">8-10x</td><td>全球行业龙头</td></tr>
+      <tr><td>H股中资银行均值</td><td>9-12%</td><td class="num">0.40-0.60x</td><td class="num">4-6x</td><td>结构性折价</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>公允P/B 0.65-0.75x</strong>（介于民营金租0.5x与中银航空0.9x之间）。在BVPS HK$3.73基础上：<strong>合理价 HK$2.42 - HK$2.80，中位数 HK$2.61</strong></p>
+
+  <h3>法2：DCF (现金流折现)</h3>
+  <p>金租企业DCF不直接适用（"FCF"被新增投放吞噬），用"净利润折现法"代替：</p>
+  <div class="code-block">假设: 未来10年净利润增速 5% → 永续4%, r = 10%
+2026E净利润 = 50.3 × 1.05 = 52.8亿
+2035E净利润 = 52.8 × 1.05^9 = 82亿
+终值 = 82亿 / (10% - 4%) × 1/(1.10)^10 = 527亿
+10年现金流现值 ≈ 350亿
+企业价值 ≈ 880亿 RMB = HK$966亿
+每股 = HK$966亿 / 126.4亿股 = HK$7.6 (过于乐观)
+
+保守情景: 假设永续增长0%, r 11%
+每股 ≈ HK$2.80</div>
+  <p><strong>DCF合理区间 HK$2.50 - HK$3.50 (多情景)，中位数 HK$3.00</strong></p>
+
+  <h3>法3：DDM (股利折现模型)</h3>
+  <div class="code-block">D0 = HK$0.109
+假设增长率 g = 4% (与业务一致)
+股权成本 r = 9-10%
+
+Gordon Growth: P = D0×(1+g)/(r-g)
+  r=10%, g=4%:  P = 0.109×1.04/0.06 = HK$1.89
+  r=9%,  g=4%:  P = 0.113/0.05 = HK$2.27
+  r=9%,  g=5%:  P = 0.114/0.04 = HK$2.87</div>
+  <p><strong>DDM合理区间 HK$1.89 - HK$2.87，中位数 HK$2.30</strong>（DDM偏低因分红率仅25%）</p>
+
+  <h3>法4：所有者盈余收益率（巴菲特偏好）</h3>
+  <div class="code-block">净利润 50.3亿 ≈ 所有者盈余 (金租业务拨备已计提)
+所有者盈余收益率 @HK$1.59 = 50.3亿 × 1.10 / HK$201亿 = 27.5%
+对比美国10年期国债 4.5% → 超额收益 23%</div>
+  <p>这是一个<strong>极高的盈余收益率</strong>，远超巴菲特要求的"至少2倍长债收益率"门槛（9%）。暗示严重低估。<strong>合理价 HK$3.00+</strong></p>
+
+  <h3>法5：PEG比率</h3>
+  <div class="code-block">P/E = 3.6x
+未来3年净利润CAGR 预期 = 8-10%
+PEG = 3.6 / 9 = 0.40  (极度便宜, &lt;1为便宜)</div>
+
+  <h3>法6：NAV (净资产价值)</h3>
+  <p>BVPS HK$3.73。在极端清算情景下（飞机/船舶打8折变现，不良资产全损），清算价值约 HK$3.73 × 0.75 = HK$2.80（仍高于现价）。</p>
+
+  <h3>法7：反向DCF</h3>
+  <div class="code-block">当前市值 HK$201亿隐含假设:
+  - 假设 r = 10%
+  - 解出永续增长率 g:
+  HK$201亿 × (10% - g) / 50.3亿×1.10 = 1  →  g = -0.3%
+
+即市场假设公司永续零增长甚至衰退。这与公司2016-2025 CAGR +10%的历史完全不符。</div>
+
+  <h3>法8：SOTP (分部加总)</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>板块</th><th class="num">资产</th><th>估值方法</th><th class="num">价值</th></tr></thead>
+    <tbody>
+      <tr><td>飞机租赁</td><td class="num">RMB 1,201亿</td><td>对标AerCap, P/B 0.8x×权益1/10</td><td class="num">HK$105亿</td></tr>
+      <tr><td>船舶租赁</td><td class="num">RMB 647亿</td><td>海工特色, P/B 0.7x×权益</td><td class="num">HK$50亿</td></tr>
+      <tr><td>区域发展+新能源</td><td class="num">RMB 1,347亿</td><td>银行类, P/B 0.5x×权益</td><td class="num">HK$75亿</td></tr>
+      <tr><td>其他+现金</td><td class="num">RMB 863亿</td><td>账面值</td><td class="num">HK$95亿</td></tr>
+      <tr><td><strong>SOTP合计</strong></td><td></td><td></td><td class="num"><strong>HK$325亿</strong></td></tr>
+      <tr><td><strong>每股SOTP</strong></td><td></td><td></td><td class="num"><strong>HK$2.57</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>估值汇总表</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>方法</th><th class="num">下限</th><th class="num">中位数</th><th class="num">上限</th><th class="num">权重</th></tr></thead>
+    <tbody>
+      <tr><td>相对P/B同业对标</td><td class="num">HK$2.42</td><td class="num">HK$2.61</td><td class="num">HK$2.80</td><td class="num">25%</td></tr>
+      <tr><td>DCF/净利润折现</td><td class="num">HK$2.50</td><td class="num">HK$3.00</td><td class="num">HK$3.50</td><td class="num">15%</td></tr>
+      <tr><td>DDM</td><td class="num">HK$1.89</td><td class="num">HK$2.30</td><td class="num">HK$2.87</td><td class="num">20%</td></tr>
+      <tr><td>所有者盈余收益率</td><td class="num">HK$3.00</td><td class="num">HK$3.50</td><td class="num">HK$4.00</td><td class="num">10%</td></tr>
+      <tr><td>清算价值 NAV</td><td class="num">HK$2.50</td><td class="num">HK$2.80</td><td class="num">HK$3.10</td><td class="num">15%</td></tr>
+      <tr><td>SOTP</td><td class="num">HK$2.30</td><td class="num">HK$2.57</td><td class="num">HK$2.85</td><td class="num">15%</td></tr>
+      <tr><td><strong>加权独立估值</strong></td><td class="num"><strong>HK$2.30</strong></td><td class="num"><strong>HK$2.60</strong></td><td class="num"><strong>HK$3.00</strong></td><td class="num">100%</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="highlight-box">
+    <div class="hl-label">独立估值结论</div>
+    <p style="margin-top:.5rem">国银金租独立估值中位数 <strong>HK$2.60/股</strong>，区间 HK$2.30 - HK$3.00。当前股价 HK$1.59 较独立估值中位数有 <strong>39% 折让</strong>，提供充分的安全边际。</p>
+  </div>
+</section>
+
+<!-- Module 8 -->
+<section class="module" id="competition">
+  <div class="module-header"><div class="module-num n8">08</div><h2>竞争与行业分析</h2></div>
+
+  <h3>中国金租行业格局（2024年末总资产排名）</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>排名</th><th>公司</th><th class="num">总资产 (亿)</th><th class="num">净利润 (亿)</th><th class="num">ROE</th><th>上市状态</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>交银金租</td><td class="num">5,100</td><td class="num">60</td><td class="num">12%</td><td>交通银行子公司</td></tr>
+      <tr><td>2</td><td>工银金租</td><td class="num">4,800</td><td class="num">52</td><td class="num">10%</td><td>工商银行子公司</td></tr>
+      <tr><td>3</td><td><strong>国银金租 01606</strong></td><td class="num">4,058</td><td class="num">45</td><td class="num">11.6%</td><td><strong>HK上市</strong></td></tr>
+      <tr><td>4</td><td>招银金租</td><td class="num">3,200</td><td class="num">28</td><td class="num">10%</td><td>招行子公司</td></tr>
+      <tr><td>5</td><td>建信金租</td><td class="num">2,800</td><td class="num">20</td><td class="num">8%</td><td>建行子公司</td></tr>
+      <tr><td>6</td><td>民生金租</td><td class="num">2,400</td><td class="num">18</td><td class="num">9%</td><td>民生银行子</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>国银金租在银行系金租中排名第三，是唯一H股独立上市的金租公司</strong>。交银/工银虽然规模大但合并入母行财报，投资者难以直接分享收益。</p>
+
+  <h3>飞机租赁行业格局（全球）</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>公司</th><th class="num">机队数 (2024)</th><th>国籍</th><th>特点</th></tr></thead>
+    <tbody>
+      <tr><td>AerCap (AER)</td><td class="num">~3,400</td><td>爱尔兰</td><td>全球绝对龙头</td></tr>
+      <tr><td>SMBC Aviation</td><td class="num">~800</td><td>日本</td><td>住友三井系</td></tr>
+      <tr><td>中银航空 (2588)</td><td class="num">~700</td><td>香港</td><td>中国银行系</td></tr>
+      <tr><td>Avolon</td><td class="num">~600</td><td>爱尔兰</td><td>渤海租赁-海航系</td></tr>
+      <tr><td>BBAM</td><td class="num">~500</td><td>美国</td><td>PE背景</td></tr>
+      <tr><td><strong>国银金租 01606</strong></td><td class="num">~521</td><td>中国</td><td><strong>全球Top 9</strong></td></tr>
+      <tr><td>Air Lease Corp (AL)</td><td class="num">~460</td><td>美国</td><td>美股上市</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>波特五力分析</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>维度</th><th class="num">强度</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>上游议价力（波音/空客）</td><td class="num">强</td><td>只有两家飞机制造商，定价权在他们手中</td></tr>
+      <tr><td>下游议价力（航空公司）</td><td class="num">中-强</td><td>航司集中度提升，租金谈判能力上升</td></tr>
+      <tr><td>替代威胁（航司自有飞机）</td><td class="num">中</td><td>全球租赁渗透率~50%，已相对饱和</td></tr>
+      <tr><td>新进入者威胁</td><td class="num">弱</td><td>金融租赁牌照+资金壁垒+专业能力构成天然屏障</td></tr>
+      <tr><td>行业内竞争</td><td class="num">强</td><td>6-7家银行系金租+多家独立租赁公司同场竞技</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout danger">
+    <div class="callout-title">颠覆风险：什么可能让这个行业变得无关紧要？</div>
+    <ul style="margin-top:.5rem;margin-bottom:0">
+      <li>航空/航运结构性衰退（虽然历史上反复证明长期需求韧性）</li>
+      <li>中国"央企退金令"落地→国资全面退出金租，低成本资金优势消失</li>
+      <li>飞机/船舶技术革命（氢能飞机/核动力船舶）→现有机队资产加速折旧</li>
+      <li>利率市场化导致利差长期收窄→金租盈利模型失效</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Module 9 -->
+<section class="module" id="technical">
+  <div class="module-header"><div class="module-num n9">09</div><h2>技术面与K线分析</h2></div>
+
+  <div class="callout warning">
+    <div class="callout-title">巴菲特从不使用技术分析</div>
+    本节作为补充供交易型投资者参考，权重远低于基本面。
+  </div>
+
+  <h3>趋势与价格结构</h3>
+  <ul>
+    <li><strong>长期趋势（周线）</strong>：2021年至今区间震荡（HK$1.10-2.00），下行后期已企稳</li>
+    <li><strong>中期趋势（日线）</strong>：2025年下半年在HK$1.45-1.70窄幅盘整，成交量收缩</li>
+    <li><strong>关键支撑</strong>：HK$1.40（2023年低点）、HK$1.50（2025年盘整底部）</li>
+    <li><strong>关键阻力</strong>：HK$1.80（2024年顶）、HK$2.00（心理整数关）、HK$2.30（2021年高点）</li>
+  </ul>
+
+  <h3>技术指标</h3>
+  <div class="table-wrapper"><table>
+    <thead><tr><th>指标</th><th>当前状态</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td>RSI (14)</td><td>~50 中性</td><td>无超买/超卖，波动降低</td></tr>
+      <tr><td>MACD</td><td>零轴附近缠绕</td><td>缺乏明确方向</td></tr>
+      <tr><td>布林带</td><td>带宽收窄</td><td>接近突破前的"能量积累"</td></tr>
+      <tr><td>MA200</td><td>HK$1.55附近</td><td>股价在长期均线震荡</td></tr>
+      <tr><td>成交量</td><td>日均1,500万股</td><td>流动性一般，大单进出需拆单</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>筹码分析</h3>
+  <p>2025年Q4以来，<strong>南向资金持续增持01606</strong>，港股通持仓比例已升至约11-12%。同时CTI Capital Management等北水机构也有增持记录，反映市场对低估值+高股息的认可。股权层面的"中信退出"不确定性仍是悬而未决的压制因素。</p>
+</section>
+
+<!-- Module 10 -->
+<section class="module" id="catalysts">
+  <div class="module-header"><div class="module-num n10">10</div><h2>增长催化剂与前景展望</h2></div>
+
+  <h3>行业顺风</h3>
+  <ul>
+    <li><strong>全球航空业复苏</strong>：IATA预测2026年全球客运量超2019年峰值，租赁需求刚性增长</li>
+    <li><strong>中国新能源转型</strong>：风电/光伏/储能设备融资租赁空间巨大，2025-2030年CAGR 20%+</li>
+    <li><strong>海工高端船舶</strong>：FPSO/LNG船/绿色甲醇船订单周期启动，国银金租抢占先机</li>
+    <li><strong>一带一路融资租赁</strong>：基础设施+装备出口融资配套需求增长</li>
+  </ul>
+
+  <h3>公司特定增长驱动</h3>
+  <ul>
+    <li><strong>波音50架订单交付</strong>（2024签订）：2026-2030年陆续交付，带动飞机资产规模扩张</li>
+    <li><strong>普惠金融高息资产</strong>：小微租赁收益率5-7%，显著高于大飞机，优化利差结构</li>
+    <li><strong>新能源装备订单</strong>：2024年投放RMB 471亿（+39%），成为第三增长曲线</li>
+    <li><strong>绿色金融债发行</strong>：2026年一期绿色债即将发行，进一步降低负债端成本</li>
+  </ul>
+
+  <h3>短期催化剂（未来6个月）</h3>
+  <ul>
+    <li>2026年一季报（2026年4-5月）：关注利差趋势、新能源资产增速</li>
+    <li>2026年中期业绩（2026年8-9月）：飞机订单交付节奏、拨备回拨可能</li>
+    <li>中信股权转让进展：如明确落地，短期压制解除</li>
+    <li>中国央行降息周期延续：利好资产端稳定+负债成本下降</li>
+  </ul>
+
+  <h3>长期展望（3-5年）</h3>
+  <p>到2030年，国银金租大概率演变为：</p>
+  <ul>
+    <li><strong>总资产</strong>：~RMB 5,500-6,000亿 (CAGR 5-7%)</li>
+    <li><strong>净利润</strong>：~RMB 70-80亿 (ROE维持11-12%)</li>
+    <li><strong>业务结构</strong>：飞机/船舶占比降至40%，新能源+普惠占比升至25%+</li>
+    <li><strong>分红率</strong>：回升至30-33%，股息率预期保持6%+</li>
+    <li><strong>估值重估</strong>：若ROE维持11%+、分红率提升，P/B有望回升至0.6-0.7x</li>
+  </ul>
+</section>
+
+<!-- Module 11 -->
+<section class="module" id="risk">
+  <div class="module-header"><div class="module-num n11">11</div><h2>风险矩阵</h2></div>
+
+  <div class="table-wrapper"><table>
+    <thead><tr><th>风险类型</th><th class="num">评分 (1-5)</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>利差收窄风险</td><td class="num">4</td><td>中国降息周期+资产端重定价压力，净利差可能从1.8%压缩至1.5%</td></tr>
+      <tr><td>杠杆+资本充足率风险</td><td class="num">3</td><td>负债率89-90%，CAR 13%刚达标，资产快速扩张可能需股权融资</td></tr>
+      <tr><td>航空业周期风险</td><td class="num">3</td><td>飞机资产占30%，若航司信用恶化（类似2020年疫情），拨备压力陡增</td></tr>
+      <tr><td>中信股权变更风险</td><td class="num">3</td><td>第二大股东退出压力悬而未决，短期或形成抛压</td></tr>
+      <tr><td>政策监管风险</td><td class="num">3</td><td>央企"退金令"若落地导致国开行退出，低成本资金优势消失</td></tr>
+      <tr><td>地缘政治/制裁风险</td><td class="num">2</td><td>美国实体清单波及中国租赁公司仍属小概率，但需警惕</td></tr>
+      <tr><td>汇率风险</td><td class="num">2</td><td>飞机租赁以美元计价，人民币波动影响汇兑</td></tr>
+      <tr><td>估值风险</td><td class="num">1</td><td>P/B 0.43x已极低，向下空间有限（除非盈利结构性恶化）</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>黑天鹅情景</h3>
+  <div class="callout danger">
+    <div class="callout-title">最坏情景压力测试</div>
+    <p style="margin-top:.5rem">假设同时发生：(1) 国开行出于战略调整减持至30%以下，(2) 中国降息导致利差压至1.0%，(3) 某大型航司破产造成RMB 50亿不良。净利润可能从50亿降至20-25亿，ROE降至5%。估算极端下跌空间：</p>
+    <div class="code-block">Worst Case: EPS 0.19 HKD × 4x PE = HK$0.76
+即当前HK$1.59再跌52%的极端下跌空间。但概率估计&lt;10%。</div>
+  </div>
+</section>
+
+<!-- Module 12 -->
+<section class="module" id="scorecard">
+  <div class="module-header"><div class="module-num n12">12</div><h2>巴菲特计分卡与投资决策</h2></div>
+
+  <h3>巴菲特计分卡（每项0-3分）</h3>
+  <div class="scorecard-grid">
+    <div class="score-row"><span class="criteria">1. 业务是否易于理解</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span><span class="score">2/3</span></div>
+    <div class="score-row"><span class="criteria">2. 经营历史是否一致</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span><span class="score">3/3</span></div>
+    <div class="score-row"><span class="criteria">3. 长期前景是否良好</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span><span class="score">2/3</span></div>
+    <div class="score-row"><span class="criteria">4. 管理层坦诚与理性</span><span class="dots"><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span><span class="score">1/3</span></div>
+    <div class="score-row"><span class="criteria">5. 主人翁经营心态</span><span class="dots"><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span><span class="score">1/3</span></div>
+    <div class="score-row"><span class="criteria">6. 高ROE低负债</span><span class="dots"><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span><span class="score">1/3</span></div>
+    <div class="score-row"><span class="criteria">7. 强劲自由现金流</span><span class="dots"><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></span><span class="score">1/3</span></div>
+    <div class="score-row"><span class="criteria">8. 宽广经济护城河</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span></span><span class="score">2/3</span></div>
+    <div class="score-row"><span class="criteria">9. 保守会计处理</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span><span class="score">3/3</span></div>
+    <div class="score-row"><span class="criteria">10. 存在安全边际</span><span class="dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></span><span class="score">3/3</span></div>
+    <div class="score-row"><span class="criteria">11. 定价能力（抗通胀）</span><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="score">0/3</span></div>
+    <div class="score-row"><span class="criteria">12. 低资本再投入需求</span><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="score">0/3</span></div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:1.5rem;margin:1.5rem 0;padding:1.25rem;background:var(--bg-alt);border-radius:var(--radius)">
+    <div class="grade-badge c">C</div>
+    <div>
+      <div style="font-size:.82rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em">总分</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--heading)">19 / 36</div>
+      <div style="font-size:.88rem;color:var(--text-secondary);margin-top:4px">C级：一般公司。强在经营纪律与估值安全边际，弱在商业模式天花板+管理层主人翁心态。</div>
+    </div>
+  </div>
+
+  <h3>投资决策</h3>
+  <div class="decision-box">
+    <div class="decision-header">
+      <div class="decision-rating">买入（价值派）</div>
+      <div class="decision-price">
+        <div class="current">HK$1.59</div>
+        <div class="target">当前价 · 目标价 HK$2.60（独立估值中位数）</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:0">12个月目标价情景</h3>
+    <div class="table-wrapper"><table>
+      <thead><tr><th>情景</th><th class="num">目标价</th><th class="num">上行空间</th><th class="num">概率</th></tr></thead>
+      <tbody>
+        <tr><td>乐观（P/B重估至0.8x + 股息率降至5%）</td><td class="num">HK$3.00</td><td class="num">+89%</td><td class="num">25%</td></tr>
+        <tr><td>基准（估值向独立FV回归）</td><td class="num">HK$2.60</td><td class="num">+63%</td><td class="num">50%</td></tr>
+        <tr><td>悲观（股价盘整 + 仅享受股息）</td><td class="num">HK$1.70</td><td class="num">+7%</td><td class="num">25%</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:.5rem"><strong>概率加权目标 = 0.25×3.00 + 0.5×2.60 + 0.25×1.70 = HK$2.48</strong></p>
+
+    <h3>分批建仓策略（精确值）</h3>
+    <div class="table-wrapper"><table>
+      <thead><tr><th>批次</th><th class="num">价格 (精确)</th><th class="num">仓位</th><th>触发条件</th></tr></thead>
+      <tbody>
+        <tr><td>首仓</td><td class="num">HK$2.08</td><td class="num">40%</td><td>FV HK$2.60 × 80%（当前价已深于此，可直接启动）</td></tr>
+        <tr><td>二仓</td><td class="num">HK$1.82</td><td class="num">30%</td><td>FV × 70%（当前价已深于此，可同步加仓）</td></tr>
+        <tr><td>三仓</td><td class="num">HK$1.56</td><td class="num">30%</td><td>FV × 60%，极端悲观情景（当前价接近此位）</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout success">
+      <div class="callout-title">当前价即深度价值区</div>
+      现价 HK$1.59 已接近三仓价 HK$1.56，这是独立估值的 60% 水位。可考虑<strong>分2-3批建仓（每批间隔2-4周）</strong>，即使价格不再下跌，目前位置亦具备充分安全边际。
+    </div>
+
+    <h3>止盈策略（精确值，不设止损）</h3>
+    <div class="table-wrapper"><table>
+      <thead><tr><th>止盈档</th><th class="num">价格</th><th class="num">减仓比例</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>止盈 1</td><td class="num">HK$2.60</td><td class="num">30%</td><td>达到独立估值中位数（FV）</td></tr>
+        <tr><td>止盈 2</td><td class="num">HK$3.25</td><td class="num">40%</td><td>达到FV × 125%（超过合理区间上限）</td></tr>
+        <tr><td>止盈 3</td><td class="num">HK$3.90</td><td class="num">30%</td><td>达到FV × 150%（市场狂热阶段）</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>仓位管理建议</h3>
+    <ul>
+      <li><strong>组合仓位</strong>：建议占组合 5-8%（深度价值+高股息定位，非核心成长仓）</li>
+      <li><strong>持有周期</strong>：3-5年中长期（等待估值修复 + 每年6-7%股息）</li>
+      <li><strong>类比角色</strong>：在整个港股价值组合中相当于"收息股 + 国开行信用锚"的组合</li>
+    </ul>
+
+    <h3>关键监控指标</h3>
+    <ul>
+      <li>每季度：净利差走势（&lt;1.5%需警惕）、不良率（&gt;1%需警惕）、拨备覆盖率</li>
+      <li>每半年：新投放的业务结构（新能源占比是否持续提升）</li>
+      <li>年度：分红率变化、ROE是否维持11%+、资本充足率</li>
+      <li>特别事件：中信股权变更、国开行战略调整、央企"退金令"政策动向</li>
+    </ul>
+
+    <h3>事件时间表</h3>
+    <ul>
+      <li><strong>2026年4-5月</strong>：2026 Q1经营数据披露</li>
+      <li><strong>2026年6月</strong>：中期派息执行</li>
+      <li><strong>2026年8-9月</strong>：2026年中期业绩公告（重要节点）</li>
+      <li><strong>2026年持续关注</strong>：中信股权转让进展、国开行"绿色金融"战略落地</li>
+      <li><strong>下一重新审视节点</strong>：2026-09 中期业绩 或 股价触及 HK$2.60（止盈档1）时</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Disclaimer -->
+<section class="disclaimer">
+  <strong>⚠️ 免责声明</strong>：本分析仅供教育和研究用途，不构成投资建议。"巴菲特"视角是一个受沃伦·巴菲特公开表述的投资原则启发的分析框架——它并不代表沃伦·巴菲特本人对任何具体公司的观点。所有投资都有风险，请在做出投资决策前咨询合格的财务顾问。数据来源：公司2024年年报、2025年中期报告、2025年业绩公告、港交所披露易、新浪财经、克而瑞租赁行业报告。
+</section>
+
+<!-- Footer -->
+<footer class="page-footer">
+  <p>巴菲特神谕分析师 · 生成于 2026-04-17</p>
+  <p>HKEX: 01606 · 国银金融租赁股份有限公司</p>
+</footer>
+
+</main>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+<script>
+(function(){
+  const STORAGE_KEY = '01606-theme';
+  const htmlEl = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if(saved){htmlEl.setAttribute('data-theme', saved); icon.innerHTML = saved==='dark' ? '&#9728;' : '&#9790;';}
+  toggle.addEventListener('click', function(){
+    const cur = htmlEl.getAttribute('data-theme');
+    const next = cur === 'light' ? 'dark' : 'light';
+    htmlEl.setAttribute('data-theme', next);
+    localStorage.setItem(STORAGE_KEY, next);
+    icon.innerHTML = next === 'dark' ? '&#9728;' : '&#9790;';
+  });
+
+  const links = document.querySelectorAll('.sidebar-nav a');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  function onScroll(){
+    let current = sections[0];
+    for(const sec of sections){
+      if(sec.getBoundingClientRect().top - 100 <= 0) current = sec;
+    }
+    links.forEach(a => a.classList.remove('active'));
+    if(current){
+      const active = document.querySelector('.sidebar-nav a[href="#'+current.id+'"]');
+      if(active) active.classList.add('active');
+    }
+    const btn = document.getElementById('backToTop');
+    if(window.scrollY > 400) btn.classList.add('visible'); else btn.classList.remove('visible');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
